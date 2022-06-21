@@ -4,18 +4,11 @@ namespace AsimovSchool\Solid\Service;
 
 use AsimovSchool\Solid\Model\AsimovPlus;
 use AsimovSchool\Solid\Model\Course;
+use AsimovSchool\Solid\Model\ScoreInterface;
 
 class Watcher
 {
-    public function watchCourse(Course $course)
-    {
-        foreach ($course->getVideos() as $video) {
-            $video->watch();
-        }
-    }
-
-    public function watchAsimovPlus(AsimovPlus $AsimovPlus)
-    {
-        $AsimovPlus->watch();
+    public function watch(ScoreInterface $content){
+        $content->watch();
     }
 }
