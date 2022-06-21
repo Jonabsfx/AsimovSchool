@@ -2,7 +2,7 @@
 
 namespace AsimovSchool\Solid\Model;
 
-class Course implements ScoreInterface
+class Course implements ScoreInterface, WatchInterface
 {
     private $name;
     private $videos;
