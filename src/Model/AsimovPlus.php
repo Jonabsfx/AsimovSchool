@@ -14,7 +14,10 @@ class AsimovPlus extends Video implements ScoreInterface
 
     public function recuperarUrl(): string
     {
-        return str_replace(' ', '-', strtolower($this->category));
+        $slugCategory = new Slug($this->category);
+        $slugName = new Slug($this->name);
+
+        return 'http://videos.alura.com.br/' . $slugCategory. '/' . $slugName;
     }
 
     public function getScore(): int 
