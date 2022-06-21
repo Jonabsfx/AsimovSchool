@@ -1,0 +1,8 @@
+{
+  "name": "jonabsfx/asimov-school",
+  "autoload": {
+    "psr-4": {
+      "Asimov\\Solid\\": "src/"
+    }
+  }
+}
