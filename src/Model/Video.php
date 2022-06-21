@@ -1,6 +1,6 @@
 <?php
 
-namespace Asimov\Solid\Model;
+namespace AsimovSchool\Solid\Model;
 
 class Video
 {

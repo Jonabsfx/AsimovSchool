@@ -1,8 +1,8 @@
 <?php
 
-namespace Asimov\Solid\Model;
+namespace AsimovSchool\Solid\Model;
 
-class AsimovSchool extends Video
+class AsimovPlus extends Video
 {
     private $category;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Asimov\Solid\Service;
+namespace AsimovSchool\Solid\Service;
 
-use Asimov\Solid\Model\AsimovSchool;
-use Asimov\Solid\Model\Course;
+use AsimovSchool\Solid\Model\AsimovPlus;
+use AsimovSchool\Solid\Model\Course;
 
 class Watcher
 {
@@ -14,8 +14,8 @@ class Watcher
         }
     }
 
-    public function watchAsimovSchool(AsimovSchool $AsimovSchool)
+    public function watchAsimovPlus(AsimovPlus $AsimovPlus)
     {
-        $AsimovSchool->watch();
+        $AsimovPlus->watch();
     }
 }

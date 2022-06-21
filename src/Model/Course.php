@@ -1,6 +1,6 @@
 <?php
 
-namespace Asimov\Solid\Model;
+namespace AsimovSchool\Solid\Model;
 
 class Course
 {
@@ -15,13 +15,13 @@ class Course
         $this->feedbacks = [];
     }
 
-    public function getFeedback(int $grade, ?string $text): void
+    public function getFeedback(int $grade, ?string $description): void
     {
-        if ($grade < 9 && empty($text)) {
+        if ($grade < 9 && empty($description)) {
             throw new \DomainException('Don\'t forget to write a message about the course');
         }
 
-        $this->feedbacks[] = [$grade, $text];
+        $this->feedbacks[] = [$grade, $description];
     }
 
     public function addVideo(Video $video)

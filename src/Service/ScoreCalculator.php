@@ -1,9 +1,9 @@
 <?php
 
-namespace Asimov\Solid\Service;
+namespace AsimovSchool\Solid\Service;
 
-use Asimov\Solid\Model\AsimovSchool;
-use Asimov\Solid\Model\Course;
+use AsimovSchool\Solid\Model\AsimovPlus;
+use AsimovSchool\Solid\Model\Course;
 
 class ScoreCalculator
 {
@@ -11,10 +11,10 @@ class ScoreCalculator
     {
         if ($content instanceof Course) {
             return 100;
-        } else if ($content instanceof AsimovSchool) {
+        } else if ($content instanceof AsimovPlus) {
             return $content->durationInMinutes() * 2;
         } else {
-            throw new \DomainException('Only AsimovSchool courses has score');
+            throw new \DomainException('Only AsimovPlus courses has score');
         }
     }
 }
