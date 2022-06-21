@@ -2,7 +2,7 @@
 
 namespace AsimovSchool\Solid\Model;
 
-class AsimovPlus extends Video
+class AsimovPlus extends Video implements ScoreInterface
 {
     private $category;
 
@@ -15,5 +15,10 @@ class AsimovPlus extends Video
     public function recuperarUrl(): string
     {
         return str_replace(' ', '-', strtolower($this->category));
+    }
+
+    public function getScore(): int 
+    {
+        return $this->durationInMinutes()*2;
     }
 }

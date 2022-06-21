@@ -2,7 +2,7 @@
 
 namespace AsimovSchool\Solid\Model;
 
-class Course
+class Course implements ScoreInterface
 {
     private $name;
     private $videos;
@@ -15,13 +15,9 @@ class Course
         $this->feedbacks = [];
     }
 
-    public function getFeedback(int $grade, ?string $description): void
+    public function getFeedback(Feedback $feedback): void
     {
-        if ($grade < 9 && empty($description)) {
-            throw new \DomainException('Don\'t forget to write a message about the course');
-        }
-
-        $this->feedbacks[] = [$grade, $description];
+        $this->feedbacks[] = $feedback;
     }
 
     public function addVideo(Video $video)
@@ -33,9 +29,13 @@ class Course
         $this->videos[] = $video;
     }
 
-    /** @return Video[] */
     public function getVideos(): array
     {
         return $this->videos;
+    }
+
+    public function getScore(): int
+    {
+        return 100;
     }
 }
